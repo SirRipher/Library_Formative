@@ -1,0 +1,54 @@
+#--------
+#Libraries_and_Modules
+#Graden_Rusk
+#Oct21_2021
+#--------
+
+import time
+
+from Libraries_folder import library_1
+from Libraries_folder import library_2
+
+print("Let's add the name of some students to a list shall we?")
+try:
+    number = int(input("How many kids are there?\n>>>" ))
+except:
+    print("It needs a number.")
+    print("start it yourself.")
+play = True
+number_2 = number
+while play == True:
+    if number_2 == number:
+        names = input("What are their name?\n>>>" )
+        library_1.List_1.append(names)
+        number_2 = number_2 - 1
+    elif number_2 >= 1:
+        names = input("What are their name?\n>>>" )
+        library_1.List_1.append(names)
+        number_2 = number_2 - 1
+    else:
+        play = False
+print("Now to double check let's print out any name you want.")
+try:
+    awnser_3 = int(input("What # were they printed in?\n>>>" ))
+    if awnser_3 > number:
+        print("Think... how many people are there? is it really that hard.")
+        print("Just for that if you want to do this you should restart it yourself.")
+    else:
+        print(library_1.List_1[awnser_3 - 1])
+except:
+    print("REally?")
+print("Next lets find out what any number times the amount of people in the list is.")
+number_4 = int(input("Pick a number.\n>>>" ))
+final_awnser = library_2.Math(number, number_4)
+print(f"Ok, {number_4} times the number of people is {final_awnser}.")
+time.sleep(3)
+print("No let's play a guessing game.")
+print("If you can print the same number as the computer you win.")
+awnser_5 = int(input("What number do you chose?\n>>>" ))
+if awnser_5 == 5:
+    print("you win! thanks for running the program.")
+else:
+    print("you lose.")
+    time.sleep(3)
+    print("What a shame.")
